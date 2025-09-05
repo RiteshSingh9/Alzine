@@ -43,9 +43,22 @@
 - `GET /api/admin/product/forms`  
   Get all product forms (requires admin JWT)
 
+### Product Form Subroutes (`/api/admin/product/forms`)
+
+- `GET /api/admin/product/forms/`  
+  Get all product forms
+
+- `POST /api/admin/product/forms/create`  
+  Create a new product form (requires admin JWT)
+
+- `PUT /api/admin/product/forms/:id`  
+  Update a product form by ID (requires admin JWT)
+
+- `DELETE /api/admin/product/forms/:id`  
+  Delete a product form by ID (requires admin JWT)
+
 ---
 
 ## Static Files
 
-- `/uploads/...`  
-  Serves uploaded images
+- `/uploads/...
