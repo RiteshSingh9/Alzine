@@ -15,11 +15,13 @@ const productSchema = new mongoose.Schema(
         type: String, required: true 
     },
     application_list: [{ 
-        type: String 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "ProductApplication",
+        required: true
     }],
-    image: { 
-        type: String 
-    },
+    image: [{
+        type: String
+    }],
   },
   { timestamps: true }
 );

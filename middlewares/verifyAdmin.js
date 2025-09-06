@@ -10,7 +10,6 @@ module.exports = function (req, res, next) {
 
     try {
         const verified = jwt.verify(token, process.env.APP_JWT_SECRET);
-        console.log(verified);
         if (!verified.isAdmin) {
             return res.status(403).json({ message: 'Access Denied. Not an admin.' });
         }

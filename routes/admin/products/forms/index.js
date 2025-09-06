@@ -29,10 +29,10 @@ router.post('/create', async (req, res) => {
         }
         const newForm = new ProductForm({ name });
         await newForm.save();
-        res.status(201).send(`Product form created successfully with id ${newForm._id}`);
+        res.status(201).json({ message: 'Product form created successfully', newForm });
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal server error');
+        res.status(500).json({ message: 'Internal server error', error });
     }
 });
 
@@ -43,12 +43,12 @@ router.delete('/:id', async (req, res) => {
     try {
         const deletedForm = await ProductForm.findByIdAndDelete(id);
         if (!deletedForm) {
-            return res.status(404).send('Form not found');
+            return res.status(404).json({ message: 'Form not found' });
         }
-        res.send('Product form deleted successfully');
+        res.json({ message: 'Product form deleted successfully', deletedForm });
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal server error');
+        res.status(500).json({ message: 'Internal server error', error });
     }
 });
 
@@ -64,7 +64,7 @@ router.put('/:id', async (req, res) => {
         if (!updatedForm) {
             return res.status(404).send('Form not found');
         }
-        res.send(`Product form updated successfully with id ${updatedForm._id}`);
+        res.json({ message: 'Product form updated successfully', updatedForm });
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal server error');
