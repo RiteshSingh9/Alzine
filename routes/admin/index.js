@@ -10,7 +10,7 @@ router.use('/product', verifyAdmin, productRoutes);
 
 router.post('/upload/image', verifyAdmin, uploadImage, async (req, res) => {
     // Handle image upload logic here
-    return req.imageUrl;
+    return res.status(201).json({ message: 'Image uploaded successfully', filePath: req.imageUrl });
 });
 
 router.get('/dashboard', verifyAdmin, async (req, res) => {
