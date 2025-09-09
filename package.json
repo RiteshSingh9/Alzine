@@ -18,7 +18,8 @@
     "mongo-sanitize": "^1.1.0",
     "mongoose": "^8.18.0",
     "multer": "^2.0.2",
-    "sharp": "^0.34.3"
+    "sharp": "^0.34.3",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
